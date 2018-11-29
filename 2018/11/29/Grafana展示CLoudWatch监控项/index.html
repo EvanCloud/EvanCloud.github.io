@@ -7,14 +7,17 @@
   
   <title>Grafana展示CLoudWatch监控项 | Evan Zhao Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、添加数据来源​    在garfana 的Configuration 中选择Data sources 并点击 “Add data source” 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。 ​    关于认证身份有三种方法，分别为：  ARN Credentials file Ac">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Grafana展示CLoudWatch监控项">
 <meta property="og:url" content="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/index.html">
 <meta property="og:site_name" content="Evan Zhao Blog">
+<meta property="og:description" content="一、添加数据来源​    在garfana 的Configuration 中选择Data sources 并点击 “Add data source” 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。 ​    关于认证身份有三种方法，分别为：  ARN Credentials file Ac">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-29T06:40:56.448Z">
+<meta property="og:updated_time" content="2018-11-29T07:14:15.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grafana展示CLoudWatch监控项">
+<meta name="twitter:description" content="一、添加数据来源​    在garfana 的Configuration 中选择Data sources 并点击 “Add data source” 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。 ​    关于认证身份有三种方法，分别为：  ARN Credentials file Ac">
   
     <link rel="alternate" href="/atom.xml" title="Evan Zhao Blog" type="application/atom+xml">
   
@@ -87,11 +90,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="一、添加数据来源"><a href="#一、添加数据来源" class="headerlink" title="一、添加数据来源"></a>一、添加数据来源</h3><p>​    在garfana 的Configuration 中选择Data sources 并点击 “Add data source” 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。</p>
+<p>​    关于认证身份有三种方法，分别为：</p>
+<ul>
+<li>ARN</li>
+<li>Credentials file</li>
+<li>Access &amp; secret key</li>
+</ul>
+<p>注意：使用文件认证和使用access &amp;secret key 本质上都是使用 Access &amp; secret key来作为认证条件，只不过一种是在grafana的Web 界面上直接填写，一种是在garfan的部署服务器的指定位置写入Access &amp; secret key 信息</p>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EFO &gt;/usr/share/grafana/.credentials</span><br><span class="line">&gt; [default]</span><br><span class="line">&gt;aws_access_key_id=xxxxxxx</span><br><span class="line">&gt;aws_secret_access_key=xxxxxx</span><br><span class="line">&gt;region=xxxxxxx</span><br><span class="line">&gt;EFO</span><br><span class="line"></span><br><span class="line">chmod 0644 /usr/share/grafana/.credentials</span><br></pre></td></tr></table></figure>
+<p><a href="a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a">参考文档</a></p>
+<h3 id="二、关于AWS上的权限设置"><a href="#二、关于AWS上的权限设置" class="headerlink" title="二、关于AWS上的权限设置"></a>二、关于AWS上的权限设置</h3><p>​    我们配置了Access &amp; secret key后连接测试显示正确，但是在控制面板却拉取不到数据，这往往是我们的用户策略上设置的不正确。</p>
+<p>不论是我们用来拉取CloudWatch的用户，还是赋予EC2实例上的角色必须拥有以下的策略：</p>
+<ul>
+<li>cloudwatch <ul>
+<li>List: ListMetrics</li>
+<li>Read: GetMetricData 、GetMetricStatistics</li>
+</ul>
+</li>
+</ul>
+<p>注意：如果用于拉取cloudwatch数据的用户和被监控的服务上的角色没有这个 策略 ，我们需要手动创建并添加上</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/" data-id="cjp28dc2x0000s4q9n81whzsw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/" data-id="cjp29kjfu0001yuq9nsmr9s83" class="article-share-link">Share</a>
       
       
     </footer>

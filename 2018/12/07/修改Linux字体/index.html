@@ -7,18 +7,18 @@
   
   <title>修改Linux字体 | Evan Zhao Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​	部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤    安装相关软件包 1yum install fontconfig ttmkfdir   上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R 7">
+  <meta name="description" content="​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤   安装相关软件包 1yum install fontconfig ttmkfdir  上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="修改Linux字体">
 <meta property="og:url" content="http://yoursite.com/2018/12/07/修改Linux字体/index.html">
 <meta property="og:site_name" content="Evan Zhao Blog">
-<meta property="og:description" content="​	部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤    安装相关软件包 1yum install fontconfig ttmkfdir   上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R 7">
+<meta property="og:description" content="​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤   安装相关软件包 1yum install fontconfig ttmkfdir  上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-12-07T06:04:44.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修改Linux字体">
-<meta name="twitter:description" content="​	部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤    安装相关软件包 1yum install fontconfig ttmkfdir   上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R 7">
+<meta name="twitter:description" content="​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤   安装相关软件包 1yum install fontconfig ttmkfdir  上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R">
   
     <link rel="alternate" href="/atom.xml" title="Evan Zhao Blog" type="application/atom+xml">
   
@@ -91,46 +91,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​	部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤</p>
+        <p>​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤</p>
 <hr>
 <ol>
-<li>
-<p>安装相关软件包</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install fontconfig ttmkfdir</span><br></pre></td></tr></table></figure></p>
+<li><p>安装相关软件包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install fontconfig ttmkfdir</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>上传字体并生成dir文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建字体存放目录</span></span><br><span class="line">mkdir /usr/share/fonts/addfonts</span><br><span class="line"><span class="comment"># 将准备好的字体上传到这个目录</span></span><br><span class="line"><span class="comment"># scp or ftp</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改目录权限</span></span><br><span class="line">chmod -R 755 /usr/share/fonts/addfonts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成dir文件</span></span><br><span class="line"><span class="comment"># ttmkfdir 搜索目录中所有的字体信息，并汇总生成fonts.scale</span></span><br><span class="line">ttmkfdir -e /usr/share/X11/fonts/encodings/encodings.dir</span><br></pre></td></tr></table></figure></p>
+<li><p>上传字体并生成dir文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建字体存放目录</span></span><br><span class="line">mkdir /usr/share/fonts/addfonts</span><br><span class="line"><span class="comment"># 将准备好的字体上传到这个目录</span></span><br><span class="line"><span class="comment"># scp or ftp</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改目录权限</span></span><br><span class="line">chmod -R 755 /usr/share/fonts/addfonts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成dir文件</span></span><br><span class="line"><span class="comment"># ttmkfdir 搜索目录中所有的字体信息，并汇总生成fonts.scale</span></span><br><span class="line">ttmkfdir -e /usr/share/X11/fonts/encodings/encodings.dir</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>修改字体库配置文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fonts/fonts.conf</span><br><span class="line"><span class="comment"># 将前面我们创建的字体目录注册到配置文件中</span></span><br><span class="line">&lt;dir&gt;/usr/share/fonts/addfonts&lt;/dir&gt;</span><br></pre></td></tr></table></figure></p>
+<li><p>修改字体库配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fonts/fonts.conf</span><br><span class="line"><span class="comment"># 将前面我们创建的字体目录注册到配置文件中</span></span><br><span class="line">&lt;dir&gt;/usr/share/fonts/addfonts&lt;/dir&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>刷新内存中的字体缓存</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#刷新缓存</span></span><br><span class="line"><span class="built_in">fc</span>-cache</span><br><span class="line"><span class="comment">#产看新增字体是否添加</span></span><br><span class="line"><span class="built_in">fc</span>-list</span><br></pre></td></tr></table></figure></p>
+<li><p>刷新内存中的字体缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#刷新缓存</span></span><br><span class="line"><span class="built_in">fc</span>-cache</span><br><span class="line"><span class="comment">#产看新增字体是否添加</span></span><br><span class="line"><span class="built_in">fc</span>-list</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>注意事项</p>
+<li><p>注意事项</p>
 <ol>
-<li>
-<p>相关的windows 字体可以在  C:\Windows\Fonts 目录下获取</p>
+<li><p>相关的windows 字体可以在  C:\Windows\Fonts 目录下获取</p>
 </li>
-<li>
-<p>更在字体后需要重启 Java 程序</p>
+<li><p>更在字体后需要重启 Java 程序</p>
 </li>
-<li>
-<p>ttmkfdir 命令详解</p>
+<li><p>ttmkfdir 命令详解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> ttmkfdir 命令详解</span><br><span class="line">-e， - 编码&lt;encodings.dir&gt;</span><br><span class="line">ttmkfdir通过针对fontenc层检查每个TrueType字体文件来完成其工作。默认的encodings.dir文件是/usr/X11R6/lib/X11/fonts/encodings/encodings.dir</span><br><span class="line">-o， - 输出</span><br><span class="line">指定输出，默认为当前目录中的fonts.scale</span><br><span class="line">-d， - font-dir</span><br><span class="line">指定TrueType字体目录，默认为当前目录</span><br><span class="line">-f， - 默认 </span><br><span class="line">指定默认字体的名称，默认为“misc”</span><br><span class="line">-m， - max-missing</span><br><span class="line">指定每个编码的最大缺失字符数，默认值为5.此选项适用于少于256个代码点定义的编码。</span><br><span class="line">-a， - max-missing-percentage</span><br><span class="line">指定每个编码的缺失字符的最大百分比，默认值为2.此选项适用于具有超过256个代码点定义的编码。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> ttmkfdir 命令详解</span><br><span class="line">-e， - 编码&lt;encodings.dir&gt;</span><br><span class="line">ttmkfdir通过针对fontenc层检查每个TrueType字体文件来完成其工作。默认的encodings.dir文件是/usr/X11R6/lib/X11/fonts/encodings/encodings.dir</span><br><span class="line">-o， - 输出</span><br><span class="line">指定输出，默认为当前目录中的fonts.scale</span><br><span class="line">-d， - font-dir</span><br><span class="line">指定TrueType字体目录，默认为当前目录</span><br><span class="line">-f， - 默认 </span><br><span class="line">指定默认字体的名称，默认为“misc”</span><br><span class="line">-m， - max-missing</span><br><span class="line">指定每个编码的最大缺失字符数，默认值为5.此选项适用于少于256个代码点定义的编码。</span><br><span class="line">-a， - max-missing-percentage</span><br><span class="line">指定每个编码的缺失字符的最大百分比，默认值为2.此选项适用于具有超过256个代码点定义的编码。</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/07/修改Linux字体/" data-id="cjpdmly6700000gq9n57ejm0h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/07/修改Linux字体/" data-id="cjpdmn2u500044iq982it6mcc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>

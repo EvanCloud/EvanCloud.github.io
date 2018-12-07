@@ -5,15 +5,20 @@
   
 
   
-  <title>Evan Zhao Blog</title>
+  <title>修改Linux字体 | Evan Zhao Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Evan Zhao Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤   安装相关软件包 1yum install fontconfig ttmkfdir  上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R">
+<meta name="keywords" content="Linxu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改Linux字体">
+<meta property="og:url" content="http://yoursite.com/2018/12/07/修改Linux字体/index.html">
 <meta property="og:site_name" content="Evan Zhao Blog">
+<meta property="og:description" content="​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤   安装相关软件包 1yum install fontconfig ttmkfdir  上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-07T06:02:02.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evan Zhao Blog">
+<meta name="twitter:title" content="修改Linux字体">
+<meta name="twitter:description" content="​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤   安装相关软件包 1yum install fontconfig ttmkfdir  上传字体并生成dir文件 1234567891011# 创建字体存放目录mkdir /usr/share/fonts/addfonts# 将准备好的字体上传到这个目录# scp or ftp#修改目录权限chmod -R">
   
     <link rel="alternate" href="/atom.xml" title="Evan Zhao Blog" type="application/atom+xml">
   
@@ -64,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-修改Linux字体" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-修改Linux字体" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/07/修改Linux字体/" class="article-date">
   <time datetime="2018-12-07T03:40:44.000Z" itemprop="datePublished">2018-12-07</time>
@@ -79,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/07/修改Linux字体/">修改Linux字体</a>
+    <h1 class="article-title" itemprop="name">
+      修改Linux字体
     </h1>
   
 
@@ -127,158 +130,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-JumpServer堡垒机" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/30/JumpServer堡垒机/" class="article-date">
-  <time datetime="2018-11-30T02:57:07.000Z" itemprop="datePublished">2018-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/30/JumpServer堡垒机/">JumpServer堡垒机</a>
-    </h1>
+    <a href="/2018/11/30/JumpServer堡垒机/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JumpServer堡垒机</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/30/JumpServer堡垒机/" data-id="cjpdmieie0001uwq94adthqhe" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Grafana展示CLoudWatch监控项" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/29/Grafana展示CLoudWatch监控项/" class="article-date">
-  <time datetime="2018-11-29T06:00:08.000Z" itemprop="datePublished">2018-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/29/Grafana展示CLoudWatch监控项/">Grafana展示CLoudWatch监控项</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、添加数据来源"><a href="#一、添加数据来源" class="headerlink" title="一、添加数据来源"></a>一、添加数据来源</h3><p>​    在garfana 的Configuration 中选择Data sources 并点击 “Add data source” 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。</p>
-<p>​    关于认证身份有三种方法，分别为：</p>
-<ul>
-<li>ARN</li>
-<li>Credentials file</li>
-<li>Access &amp; secret key</li>
-</ul>
-<p>注意：使用文件认证和使用access &amp;secret key 本质上都是使用 Access &amp; secret key来作为认证条件，只不过一种是在grafana的Web 界面上直接填写，一种是在garfan的部署服务器的指定位置写入Access &amp; secret key 信息</p>
-<p>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EFO &gt;/usr/share/grafana/.credentials</span><br><span class="line">&gt; [default]</span><br><span class="line">&gt;aws_access_key_id=xxxxxxx</span><br><span class="line">&gt;aws_secret_access_key=xxxxxx</span><br><span class="line">&gt;region=xxxxxxx</span><br><span class="line">&gt;EFO</span><br><span class="line"></span><br><span class="line">chmod 0644 /usr/share/grafana/.credentials</span><br></pre></td></tr></table></figure>
-<p><a href="a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a">参考文档</a></p>
-<h3 id="二、关于AWS上的权限设置"><a href="#二、关于AWS上的权限设置" class="headerlink" title="二、关于AWS上的权限设置"></a>二、关于AWS上的权限设置</h3><p>​    我们配置了Access &amp; secret key后连接测试显示正确，但是在控制面板却拉取不到数据，这往往是我们的用户策略上设置的不正确。</p>
-<p>不论是我们用来拉取CloudWatch的用户，还是赋予EC2实例上的角色必须拥有以下的策略：</p>
-<ul>
-<li>cloudwatch <ul>
-<li>List: ListMetrics</li>
-<li>Read: GetMetricData 、GetMetricStatistics</li>
-</ul>
-</li>
-</ul>
-<p>注意：如果用于拉取cloudwatch数据的用户和被监控的服务上的角色没有这个 策略 ，我们需要手动创建并添加上</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/" data-id="cjpdmiei70000uwq9k5csizsn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/20/hello-world/" class="article-date">
-  <time datetime="2018-11-20T04:00:08.000Z" itemprop="datePublished">2018-11-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​    我是一名计算机爱好者，很有幸能在我的职业生涯开始就接触云计算。随着越加深入的学习，我感觉我对于一些知识的掌握和理解都有了很大的进步，所以我希望借由这个博客来和大家分享我的所思所得。</p>
-<p>​    现今我已经陆续取得了以下专业认证：</p>
-<ul>
-<li>AWS Certified Developer - Associate</li>
-<li>AWS Certified DevOps Engineer - Professional</li>
-<li>AWS Certified Solutions Architect - Associate</li>
-<li>AWS Certified Solutions Architect - Professional</li>
-<li>Alibaba Cloud Certified Professional</li>
-</ul>
-<hr>
-<p>欢迎大家通过邮件和我交流</p>
-<p>E-mail:<a href="mailto:chinaclouder@163.com" target="_blank" rel="noopener">chinaclouder@163.com</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/20/hello-world/" data-id="cjpdmieih0003uwq9mkkmfdt7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Me/">Me</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         

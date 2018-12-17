@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/12/AWS-IAM/" data-id="cjps53fnb00006oq9c9cavqpy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/12/AWS-IAM/" data-id="cjps590ax0000ckq9xa957bq6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
@@ -131,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/12/maven-初解/" data-id="cjps53fnn00056oq9lkj6638l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/12/maven-初解/" data-id="cjps590b70004ckq9ve7s8xxm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -166,25 +166,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下：</p>
-<h3>1. 先在 Jenkins 中添加 [ 凭据 ]</h3>
-<p>​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenkins 生成的需要到以下目录获取 :</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/lib/jenkins/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-先在-Jenkins-中添加-凭据"><a href="#1-先在-Jenkins-中添加-凭据" class="headerlink" title="1. 先在 Jenkins 中添加 [ 凭据 ]"></a>1. 先在 Jenkins 中添加 [ 凭据 ]</h3><p>​    进入 Jenkins Web 界面后点击 [ 凭据 ] –&gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenkins 生成的需要到以下目录获取 :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/lib/jenkins/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 <p>注意：如果是使用 Key 的这种方式需要将公钥提前放入远程主机的对应目录下：</p>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim .ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
-<h3>2.配置远程主机信息</h3>
-<p>​	进入 [ 系统管理 ] ---&gt; [ 系统设置 ] ，找到 [ SSH remote hosts ] 模块，依次填入 :</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim .ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-配置远程主机信息"><a href="#2-配置远程主机信息" class="headerlink" title="2.配置远程主机信息"></a>2.配置远程主机信息</h3><p>​    进入 [ 系统管理 ] —&gt; [ 系统设置 ] ，找到 [ SSH remote hosts ] 模块，依次填入 :</p>
 <ul>
-<li>Hostname   --  目标主机地址</li>
-<li>Port  --  SSH 开放的端口，默认是22</li>
-<li>Credentials -- 选择对应的凭据</li>
+<li>Hostname   –  目标主机地址</li>
+<li>Port  –  SSH 开放的端口，默认是22</li>
+<li>Credentials – 选择对应的凭据</li>
 </ul>
-<h2>关于SCP 配置后不能使用的问题</h2>
-<p>​	需要将目标主机的信息写入到  Jenkins 的【  /var/lib/jenkins/.ssh/known_hosts 】 文件中，不然第一次Jenkisn 无法成功SCP文件到目标主机，因为在第一次的 SCP 过程中有一个需要输入 “YES” 确认反馈。现在Jenkins 主机上ssh 登录一下目标主机，然后退出后将   [  ~/.ssh/authorized_keys ] 的内容写入到Jenkins的【  /var/lib/jenkins/.ssh/known_hosts 】 内即可。</p>
+<h2 id="关于SCP-配置后不能使用的问题"><a href="#关于SCP-配置后不能使用的问题" class="headerlink" title="关于SCP 配置后不能使用的问题"></a>关于SCP 配置后不能使用的问题</h2><p>​    需要将目标主机的信息写入到  Jenkins 的【  /var/lib/jenkins/.ssh/known_hosts 】 文件中，不然第一次Jenkisn 无法成功SCP文件到目标主机，因为在第一次的 SCP 过程中有一个需要输入 “YES” 确认反馈。现在Jenkins 主机上ssh 登录一下目标主机，然后退出后将   [  ~/.ssh/authorized_keys ] 的内容写入到Jenkins的【  /var/lib/jenkins/.ssh/known_hosts 】 内即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/11/jenkins添加远程主机/" data-id="cjps53fnm00046oq964p47lm2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/11/jenkins添加远程主机/" data-id="cjps590b60003ckq9bs2yya81" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -218,46 +215,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​	部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤</p>
+        <p>​    部署完java项目后有字体显示问题，现在记录下向Linux服务器添加字体的步骤</p>
 <hr>
 <ol>
-<li>
-<p>安装相关软件包</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install fontconfig ttmkfdir</span><br></pre></td></tr></table></figure></p>
+<li><p>安装相关软件包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install fontconfig ttmkfdir</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>上传字体并生成dir文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建字体存放目录</span></span><br><span class="line">mkdir /usr/share/fonts/addfonts</span><br><span class="line"><span class="comment"># 将准备好的字体上传到这个目录</span></span><br><span class="line"><span class="comment"># scp or ftp</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改目录权限</span></span><br><span class="line">chmod -R 755 /usr/share/fonts/addfonts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成dir文件</span></span><br><span class="line"><span class="comment"># ttmkfdir 搜索目录中所有的字体信息，并汇总生成fonts.scale</span></span><br><span class="line">ttmkfdir -e /usr/share/X11/fonts/encodings/encodings.dir</span><br></pre></td></tr></table></figure></p>
+<li><p>上传字体并生成dir文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建字体存放目录</span></span><br><span class="line">mkdir /usr/share/fonts/addfonts</span><br><span class="line"><span class="comment"># 将准备好的字体上传到这个目录</span></span><br><span class="line"><span class="comment"># scp or ftp</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改目录权限</span></span><br><span class="line">chmod -R 755 /usr/share/fonts/addfonts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成dir文件</span></span><br><span class="line"><span class="comment"># ttmkfdir 搜索目录中所有的字体信息，并汇总生成fonts.scale</span></span><br><span class="line">ttmkfdir -e /usr/share/X11/fonts/encodings/encodings.dir</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>修改字体库配置文件</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fonts/fonts.conf</span><br><span class="line"><span class="comment"># 将前面我们创建的字体目录注册到配置文件中</span></span><br><span class="line">&lt;dir&gt;/usr/share/fonts/addfonts&lt;/dir&gt;</span><br></pre></td></tr></table></figure></p>
+<li><p>修改字体库配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fonts/fonts.conf</span><br><span class="line"><span class="comment"># 将前面我们创建的字体目录注册到配置文件中</span></span><br><span class="line">&lt;dir&gt;/usr/share/fonts/addfonts&lt;/dir&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>刷新内存中的字体缓存</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#刷新缓存</span></span><br><span class="line"><span class="built_in">fc</span>-cache</span><br><span class="line"><span class="comment">#产看新增字体是否添加</span></span><br><span class="line"><span class="built_in">fc</span>-list</span><br></pre></td></tr></table></figure></p>
+<li><p>刷新内存中的字体缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#刷新缓存</span></span><br><span class="line"><span class="built_in">fc</span>-cache</span><br><span class="line"><span class="comment">#产看新增字体是否添加</span></span><br><span class="line"><span class="built_in">fc</span>-list</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>注意事项</p>
+<li><p>注意事项</p>
 <ol>
-<li>
-<p>相关的windows 字体可以在  C:\Windows\Fonts 目录下获取</p>
+<li><p>相关的windows 字体可以在  C:\Windows\Fonts 目录下获取</p>
 </li>
-<li>
-<p>更在字体后需要重启 Java 程序</p>
+<li><p>更在字体后需要重启 Java 程序</p>
 </li>
-<li>
-<p>ttmkfdir 命令详解</p>
+<li><p>ttmkfdir 命令详解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> ttmkfdir 命令详解</span><br><span class="line">-e， - 编码&lt;encodings.dir&gt;</span><br><span class="line">ttmkfdir通过针对fontenc层检查每个TrueType字体文件来完成其工作。默认的encodings.dir文件是/usr/X11R6/lib/X11/fonts/encodings/encodings.dir</span><br><span class="line">-o， - 输出</span><br><span class="line">指定输出，默认为当前目录中的fonts.scale</span><br><span class="line">-d， - font-dir</span><br><span class="line">指定TrueType字体目录，默认为当前目录</span><br><span class="line">-f， - 默认 </span><br><span class="line">指定默认字体的名称，默认为“misc”</span><br><span class="line">-m， - max-missing</span><br><span class="line">指定每个编码的最大缺失字符数，默认值为5.此选项适用于少于256个代码点定义的编码。</span><br><span class="line">-a， - max-missing-percentage</span><br><span class="line">指定每个编码的缺失字符的最大百分比，默认值为2.此选项适用于具有超过256个代码点定义的编码。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> ttmkfdir 命令详解</span><br><span class="line">-e， - 编码&lt;encodings.dir&gt;</span><br><span class="line">ttmkfdir通过针对fontenc层检查每个TrueType字体文件来完成其工作。默认的encodings.dir文件是/usr/X11R6/lib/X11/fonts/encodings/encodings.dir</span><br><span class="line">-o， - 输出</span><br><span class="line">指定输出，默认为当前目录中的fonts.scale</span><br><span class="line">-d， - font-dir</span><br><span class="line">指定TrueType字体目录，默认为当前目录</span><br><span class="line">-f， - 默认 </span><br><span class="line">指定默认字体的名称，默认为“misc”</span><br><span class="line">-m， - max-missing</span><br><span class="line">指定每个编码的最大缺失字符数，默认值为5.此选项适用于少于256个代码点定义的编码。</span><br><span class="line">-a， - max-missing-percentage</span><br><span class="line">指定每个编码的缺失字符的最大百分比，默认值为2.此选项适用于具有超过256个代码点定义的编码。</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/07/修改Linux字体/" data-id="cjps53fnp00086oq9vkw5m25u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/07/修改Linux字体/" data-id="cjps590b80005ckq9xq4d7zip" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -291,9 +280,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3>一、添加数据来源</h3>
-<p>​	在garfana 的Configuration 中选择Data sources 并点击 &quot;Add data source&quot; 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。</p>
-<p>​	关于认证身份有三种方法，分别为：</p>
+        <h3 id="一、添加数据来源"><a href="#一、添加数据来源" class="headerlink" title="一、添加数据来源"></a>一、添加数据来源</h3><p>​    在garfana 的Configuration 中选择Data sources 并点击 “Add data source” 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。</p>
+<p>​    关于认证身份有三种方法，分别为：</p>
 <ul>
 <li>ARN</li>
 <li>Credentials file</li>
@@ -301,14 +289,12 @@
 </ul>
 <p>注意：使用文件认证和使用access &amp;secret key 本质上都是使用 Access &amp; secret key来作为认证条件，只不过一种是在grafana的Web 界面上直接填写，一种是在garfan的部署服务器的指定位置写入Access &amp; secret key 信息</p>
 <p>示例：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EFO &gt;/usr/share/grafana/.credentials</span><br><span class="line">&gt; [default]</span><br><span class="line">&gt;aws_access_key_id=xxxxxxx</span><br><span class="line">&gt;aws_secret_access_key=xxxxxx</span><br><span class="line">&gt;region=xxxxxxx</span><br><span class="line">&gt;EFO</span><br><span class="line"></span><br><span class="line">chmod 0644 /usr/share/grafana/.credentials</span><br></pre></td></tr></table></figure></p>
-<p>[参考文档](&lt;a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a&gt;)</p>
-<h3>二、关于AWS上的权限设置</h3>
-<p>​	我们配置了Access &amp; secret key后连接测试显示正确，但是在控制面板却拉取不到数据，这往往是我们的用户策略上设置的不正确。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EFO &gt;/usr/share/grafana/.credentials</span><br><span class="line">&gt; [default]</span><br><span class="line">&gt;aws_access_key_id=xxxxxxx</span><br><span class="line">&gt;aws_secret_access_key=xxxxxx</span><br><span class="line">&gt;region=xxxxxxx</span><br><span class="line">&gt;EFO</span><br><span class="line"></span><br><span class="line">chmod 0644 /usr/share/grafana/.credentials</span><br></pre></td></tr></table></figure>
+<p><a href="a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a">参考文档</a></p>
+<h3 id="二、关于AWS上的权限设置"><a href="#二、关于AWS上的权限设置" class="headerlink" title="二、关于AWS上的权限设置"></a>二、关于AWS上的权限设置</h3><p>​    我们配置了Access &amp; secret key后连接测试显示正确，但是在控制面板却拉取不到数据，这往往是我们的用户策略上设置的不正确。</p>
 <p>不论是我们用来拉取CloudWatch的用户，还是赋予EC2实例上的角色必须拥有以下的策略：</p>
 <ul>
-<li>cloudwatch
-<ul>
+<li>cloudwatch <ul>
 <li>List: ListMetrics</li>
 <li>Read: GetMetricData 、GetMetricStatistics</li>
 </ul>
@@ -319,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/" data-id="cjps53fnk00036oq99k1gvgn7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/" data-id="cjps590b20001ckq96b1i0tt0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
@@ -353,8 +339,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​	我是一名计算机爱好者，很有幸能在我的职业生涯开始就接触云计算。随着越加深入的学习，我感觉我对于一些知识的掌握和理解都有了很大的进步，所以我希望借由这个博客来和大家分享我的所思所得。</p>
-<p>​	现今我已经陆续取得了以下专业认证：</p>
+        <p>​    我是一名计算机爱好者，很有幸能在我的职业生涯开始就接触云计算。随着越加深入的学习，我感觉我对于一些知识的掌握和理解都有了很大的进步，所以我希望借由这个博客来和大家分享我的所思所得。</p>
+<p>​    现今我已经陆续取得了以下专业认证：</p>
 <ul>
 <li>AWS Certified Developer - Associate</li>
 <li>AWS Certified DevOps Engineer - Professional</li>
@@ -364,12 +350,12 @@
 </ul>
 <hr>
 <p>欢迎大家通过邮件和我交流</p>
-<p>E-mail:chinaclouder@163.com</p>
+<p>E-mail:<a href="mailto:chinaclouder@163.com" target="_blank" rel="noopener">chinaclouder@163.com</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/20/hello-world/" data-id="cjps53fnh00016oq9yah6s6wv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/20/hello-world/" data-id="cjps590bb0008ckq9hxz4592z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Me/">Me</a></li></ul>

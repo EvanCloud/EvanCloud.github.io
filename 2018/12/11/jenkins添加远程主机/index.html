@@ -7,18 +7,18 @@
   
   <title>jenkins添加远程主机 | Evan Zhao Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ] ​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenk">
+  <meta name="description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ]​    进入 Jenkins Web 界面后点击 [ 凭据 ] –&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jen">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jenkins添加远程主机">
 <meta property="og:url" content="http://yoursite.com/2018/12/11/jenkins添加远程主机/index.html">
 <meta property="og:site_name" content="Evan Zhao Blog">
-<meta property="og:description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ] ​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenk">
+<meta property="og:description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ]​    进入 Jenkins Web 界面后点击 [ 凭据 ] –&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jen">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-12-17T09:49:34.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins添加远程主机">
-<meta name="twitter:description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ] ​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenk">
+<meta name="twitter:description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ]​    进入 Jenkins Web 界面后点击 [ 凭据 ] –&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jen">
   
     <link rel="alternate" href="/atom.xml" title="Evan Zhao Blog" type="application/atom+xml">
   
@@ -92,25 +92,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下：</p>
-<h3>1. 先在 Jenkins 中添加 [ 凭据 ]</h3>
-<p>​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenkins 生成的需要到以下目录获取 :</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/lib/jenkins/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-先在-Jenkins-中添加-凭据"><a href="#1-先在-Jenkins-中添加-凭据" class="headerlink" title="1. 先在 Jenkins 中添加 [ 凭据 ]"></a>1. 先在 Jenkins 中添加 [ 凭据 ]</h3><p>​    进入 Jenkins Web 界面后点击 [ 凭据 ] –&gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenkins 生成的需要到以下目录获取 :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/lib/jenkins/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 <p>注意：如果是使用 Key 的这种方式需要将公钥提前放入远程主机的对应目录下：</p>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim .ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
-<h3>2.配置远程主机信息</h3>
-<p>​	进入 [ 系统管理 ] ---&gt; [ 系统设置 ] ，找到 [ SSH remote hosts ] 模块，依次填入 :</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim .ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-配置远程主机信息"><a href="#2-配置远程主机信息" class="headerlink" title="2.配置远程主机信息"></a>2.配置远程主机信息</h3><p>​    进入 [ 系统管理 ] —&gt; [ 系统设置 ] ，找到 [ SSH remote hosts ] 模块，依次填入 :</p>
 <ul>
-<li>Hostname   --  目标主机地址</li>
-<li>Port  --  SSH 开放的端口，默认是22</li>
-<li>Credentials -- 选择对应的凭据</li>
+<li>Hostname   –  目标主机地址</li>
+<li>Port  –  SSH 开放的端口，默认是22</li>
+<li>Credentials – 选择对应的凭据</li>
 </ul>
-<h2>关于SCP 配置后不能使用的问题</h2>
-<p>​	需要将目标主机的信息写入到  Jenkins 的【  /var/lib/jenkins/.ssh/known_hosts 】 文件中，不然第一次Jenkisn 无法成功SCP文件到目标主机，因为在第一次的 SCP 过程中有一个需要输入 “YES” 确认反馈。现在Jenkins 主机上ssh 登录一下目标主机，然后退出后将   [  ~/.ssh/authorized_keys ] 的内容写入到Jenkins的【  /var/lib/jenkins/.ssh/known_hosts 】 内即可。</p>
+<h2 id="关于SCP-配置后不能使用的问题"><a href="#关于SCP-配置后不能使用的问题" class="headerlink" title="关于SCP 配置后不能使用的问题"></a>关于SCP 配置后不能使用的问题</h2><p>​    需要将目标主机的信息写入到  Jenkins 的【  /var/lib/jenkins/.ssh/known_hosts 】 文件中，不然第一次Jenkisn 无法成功SCP文件到目标主机，因为在第一次的 SCP 过程中有一个需要输入 “YES” 确认反馈。现在Jenkins 主机上ssh 登录一下目标主机，然后退出后将   [  ~/.ssh/authorized_keys ] 的内容写入到Jenkins的【  /var/lib/jenkins/.ssh/known_hosts 】 内即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/11/jenkins添加远程主机/" data-id="cjps53fnm00046oq964p47lm2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/11/jenkins添加远程主机/" data-id="cjps590b60003ckq9bs2yya81" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>

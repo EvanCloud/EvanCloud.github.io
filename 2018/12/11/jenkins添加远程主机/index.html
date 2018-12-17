@@ -5,20 +5,20 @@
   
 
   
-  <title>Grafana展示CLoudWatch监控项 | Evan Zhao Blog</title>
+  <title>jenkins添加远程主机 | Evan Zhao Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、添加数据来源 ​	在garfana 的Configuration 中选择Data sources 并点击 &amp;quot;Add data source&amp;quot; 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。 ​	关于认证身份有三种方法，分别为：  ARN Credentials fi">
-<meta name="keywords" content="AWS">
+  <meta name="description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ] ​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenk">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grafana展示CLoudWatch监控项">
-<meta property="og:url" content="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/index.html">
+<meta property="og:title" content="jenkins添加远程主机">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/jenkins添加远程主机/index.html">
 <meta property="og:site_name" content="Evan Zhao Blog">
-<meta property="og:description" content="一、添加数据来源 ​	在garfana 的Configuration 中选择Data sources 并点击 &amp;quot;Add data source&amp;quot; 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。 ​	关于认证身份有三种方法，分别为：  ARN Credentials fi">
+<meta property="og:description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ] ​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenk">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-29T07:20:38.144Z">
+<meta property="og:updated_time" content="2018-12-17T09:49:34.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grafana展示CLoudWatch监控项">
-<meta name="twitter:description" content="一、添加数据来源 ​	在garfana 的Configuration 中选择Data sources 并点击 &amp;quot;Add data source&amp;quot; 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。 ​	关于认证身份有三种方法，分别为：  ARN Credentials fi">
+<meta name="twitter:title" content="jenkins添加远程主机">
+<meta name="twitter:description" content="Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下： 1. 先在 Jenkins 中添加 [ 凭据 ] ​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&amp;gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenk">
   
     <link rel="alternate" href="/atom.xml" title="Evan Zhao Blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Grafana展示CLoudWatch监控项" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-jenkins添加远程主机" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/29/Grafana展示CLoudWatch监控项/" class="article-date">
-  <time datetime="2018-11-29T06:00:08.000Z" itemprop="datePublished">2018-11-29</time>
+    <a href="/2018/12/11/jenkins添加远程主机/" class="article-date">
+  <time datetime="2018-12-11T10:56:55.000Z" itemprop="datePublished">2018-12-11</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Grafana展示CLoudWatch监控项
+      jenkins添加远程主机
     </h1>
   
 
@@ -91,38 +91,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3>一、添加数据来源</h3>
-<p>​	在garfana 的Configuration 中选择Data sources 并点击 &quot;Add data source&quot; 来添加数据来源，注意再garfana的现版本中已经内建支持 AWS CloudWatch 为数据来源，我们只需要在 Type 中选择 CloudWatch。</p>
-<p>​	关于认证身份有三种方法，分别为：</p>
+        <p>Jenkins 添加远程的SSH主机，并在远程的主机上面执行命令或者脚本。这个时候就需要为远程的主机进行注册,配置步骤如下：</p>
+<h3>1. 先在 Jenkins 中添加 [ 凭据 ]</h3>
+<p>​	进入 Jenkins Web 界面后点击 [ 凭据 ] --&gt; [ 添加凭据 ]，根据提示填写凭据的 名称 和 私钥（也可使用密码登录的方式） 。私钥可以是自己生成的，也可使用 Jenkins 自动生成的，Jenkins 生成的需要到以下目录获取 :</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/lib/jenkins/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<p>注意：如果是使用 Key 的这种方式需要将公钥提前放入远程主机的对应目录下：</p>
+<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim .ssh/authorized_keys</span></span><br></pre></td></tr></table></figure></p>
+<h3>2.配置远程主机信息</h3>
+<p>​	进入 [ 系统管理 ] ---&gt; [ 系统设置 ] ，找到 [ SSH remote hosts ] 模块，依次填入 :</p>
 <ul>
-<li>ARN</li>
-<li>Credentials file</li>
-<li>Access &amp; secret key</li>
+<li>Hostname   --  目标主机地址</li>
+<li>Port  --  SSH 开放的端口，默认是22</li>
+<li>Credentials -- 选择对应的凭据</li>
 </ul>
-<p>注意：使用文件认证和使用access &amp;secret key 本质上都是使用 Access &amp; secret key来作为认证条件，只不过一种是在grafana的Web 界面上直接填写，一种是在garfan的部署服务器的指定位置写入Access &amp; secret key 信息</p>
-<p>示例：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EFO &gt;/usr/share/grafana/.credentials</span><br><span class="line">&gt; [default]</span><br><span class="line">&gt;aws_access_key_id=xxxxxxx</span><br><span class="line">&gt;aws_secret_access_key=xxxxxx</span><br><span class="line">&gt;region=xxxxxxx</span><br><span class="line">&gt;EFO</span><br><span class="line"></span><br><span class="line">chmod 0644 /usr/share/grafana/.credentials</span><br></pre></td></tr></table></figure></p>
-<p>[参考文档](&lt;a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a&gt;)</p>
-<h3>二、关于AWS上的权限设置</h3>
-<p>​	我们配置了Access &amp; secret key后连接测试显示正确，但是在控制面板却拉取不到数据，这往往是我们的用户策略上设置的不正确。</p>
-<p>不论是我们用来拉取CloudWatch的用户，还是赋予EC2实例上的角色必须拥有以下的策略：</p>
-<ul>
-<li>cloudwatch
-<ul>
-<li>List: ListMetrics</li>
-<li>Read: GetMetricData 、GetMetricStatistics</li>
-</ul>
-</li>
-</ul>
-<p>注意：如果用于拉取cloudwatch数据的用户和被监控的服务上的角色没有这个 策略 ，我们需要手动创建并添加上</p>
+<h2>关于SCP 配置后不能使用的问题</h2>
+<p>​	需要将目标主机的信息写入到  Jenkins 的【  /var/lib/jenkins/.ssh/known_hosts 】 文件中，不然第一次Jenkisn 无法成功SCP文件到目标主机，因为在第一次的 SCP 过程中有一个需要输入 “YES” 确认反馈。现在Jenkins 主机上ssh 登录一下目标主机，然后退出后将   [  ~/.ssh/authorized_keys ] 的内容写入到Jenkins的【  /var/lib/jenkins/.ssh/known_hosts 】 内即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/29/Grafana展示CLoudWatch监控项/" data-id="cjps53fnk00036oq99k1gvgn7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/11/jenkins添加远程主机/" data-id="cjps53fnm00046oq964p47lm2" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -130,19 +121,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/12/07/修改Linux字体/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/12/maven-初解/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          修改Linux字体
+          maven-初解
         
       </div>
     </a>
   
   
-    <a href="/2018/11/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/12/07/修改Linux字体/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">修改Linux字体</div>
     </a>
   
 </nav>
